@@ -1,0 +1,61 @@
+<html>
+	<head>
+    	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    	<link href='http://fonts.googleapis.com/css?family=Codystar' rel='stylesheet' type='text/css'>
+    	<link href='http://fonts.googleapis.com/css?family=Raleway:700' rel='stylesheet' type='text/css'>
+    	<link rel="stylesheet" type="text/css"href="style.css">
+   		 <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
+    	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.js"></script>
+    	<script src="script.js"></script>
+   		<script src="ngAutocomplete.js"></script>
+   		<title>
+   			TLDR Weather
+   		</title>
+	</head>
+	<body> 
+		<div ng-app="tldr" ng-controller="tldrCtrl">
+			<div class="row">
+				<div class="col-md-12">
+					<center>
+						<img src="sun.png" style = "width: 150px; height: 150px;">
+					</center>	
+				</div>
+				<div class="col-md-12">
+					<center>
+						<h2 style = "font-family: 'Codystar', cursive; font-weight : 1000;">TLDR; Weather</h2>	
+					</center>	
+				</div>
+				<div class="col-md-12">
+					<center>
+						<input style = "font-family: 'Codystar', cursive; font-weight : 1000;" type="text" id="Autocomplete" class="form-control" placeholder = "Enter a city" ng-autocomplete="resultserver" details="details1" options="options1"/>	
+					</center>	
+				</div>
+				<br>
+				<div class="col-md-12">
+					<center>
+						<h3 style = "font-family: 'Open Sans',sans-serif; font-weight : 10000;">{{resultserver}}</h3>
+					</center>	
+				</div>
+				<div class="col-md-12">
+					<center>
+						<img ng-src = "{{resultimage}}"/>
+					</center>	
+				</div>
+				<div class="col-md-12">
+					<center>
+						<h1 style = "font-family: 'Raleway', sans-serif; font-weight : 10000; fonr-size : 45;">{{resultsentence}}</h1>
+					</center>	
+				</div>
+			</div>
+			
+			<!--<div id = "parent" class="row form-group move-down">    		
+        			<div class="col-md-4"></div>
+        			<img id = "sun" src="sun.png" class="col-md-4"/>       			
+        			<label id = "name" for="Autocomplete">TLDR Weather</label>
+        			<input type="text" id="Autocomplete" class="form-control" placeholder = "Enter a city" ng-autocomplete="result1" details="details1" options="options1"/>
+   			</div>
+   			-->
+		</div>			
+	</body>
+</html>

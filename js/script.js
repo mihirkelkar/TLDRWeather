@@ -3,8 +3,10 @@ angular.module( "tldr", ['ngAutocomplete'])
     $scope.resultserver = '';
     $scope.resultimage= "";
     $scope.resultsentence="";
+    
+    console.log($scope.resultserver);
 
-    $http.get("http://tldr-weather.herokuapp.com/weather/" + $scope.resultserver)
+    $http.get("weather/" + $scope.resultserver)
     .success(function(response) {
     	$scope.resultimage = response.image;
     	$scope.resultsentence = response.sentence;

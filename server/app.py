@@ -1,5 +1,6 @@
 from flask import Flask, send_from_directory
 import pyowm
+import json
 app = Flask(__name__)
 
 owm = pyowm.OWM('513aad7ba88a01eb528abdccfbe02b5b')
@@ -27,10 +28,10 @@ def weatherByCity(place=None):
     if place:
         observation = owm.weather_at_place(place)
         w = observation.get_weather()
-        x = w.get_wind() 
+        x = {} 
         x['image'] = "random.jpg"
         x['sentence'] = "Aai zawadya. Its so much colder today"
-        return str(x)
+        return json.dumps(x)
     else:
         return "Error"
 
